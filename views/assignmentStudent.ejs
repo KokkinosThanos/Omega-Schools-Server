@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title1 %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="16x16">
+  </head>
+  <body>
+
+    <div id="container">
+
+      <header>
+
+        <div class="head-bar">
+
+          <a href="<%= '/' %>">
+            <div class="icon-tab">
+              <div class="icon"></div> 
+            </div>
+          </a>
+
+          <div class="head-menu">
+
+            <div class="menu">
+
+              <div class="dropbtn">
+                <div class="i"></div>
+                <div class="i"></div>
+                <div class="i"></div>
+              </div>
+              
+              <div class="dropdown-content">
+                <nav>
+                  <ul>
+                    <li> <a href="<%= '/students/' %>">Students</a> </li>
+                    <li> <a href="<%= '/trainers/' %>">Trainers</a> </li>
+                    <li> <a href="<%= '/courses/' %>">Courses</a> </li>
+                    <li> <a href="<%= '/assignments/' %>">Assignments</a> </li>
+                    <li> <a href="<%= '/assignmentStudent/' %>">Student's Assignment</a> </li>
+                    <li> <a href="<%= '/students/addStudent/' %>">Add Student</a> </li>
+                    <li> <a href="<%= '/trainers/addTrainer' %>">Add Trainer</a> </li>
+                  </ul>
+                </nav>
+              </div>
+
+            </div>
+            
+          </div>
+        </div>
+
+      </header>
+
+      <main>
+        <div class="main-items">
+
+          <div class="head-title">
+            <h2><%= title2 %></h2>
+            <p class="title">Data for all <%= title2 %></p>
+          </div>
+
+          <div class="panel">
+            <div class="titles">
+
+              <table class="table-titles">
+                <tr>
+                  <td>First Name </td>
+                  <td>Last Name </td> 
+                  <td>Title </td>
+                  <td>Description</td>
+                  <td>Subject Date Time</td>
+                  <td>Oral Mark </td>
+                  <td>Total Mark </td>
+
+                </tr>
+              </table>
+
+              <div class="data">
+                <% for(var i = 0; i < assignmentStudent.length; i++) { %>
+                <table class="table-data">
+                  <tr>
+                    <td><span><%= assignmentStudent[i].firstName %></span></td> 
+                    <td><span><%= assignmentStudent[i].lastName %></span></td> 
+                    <td><span><%= assignmentStudent[i].title %></span></td>
+                    <td><span><%= assignmentStudent[i].description %></span></td> 
+                    <td><span><%= assignmentStudent[i].subDateTime.toLocaleDateString() %></span></td>
+                    <td><span><%= assignmentStudent[i].oralMark %></span></td> 
+                    <td><span><%= assignmentStudent[i].totalMark %></span></td>
+                  </tr>
+                </table>
+                <% } %>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      <footer>
+
+      </footer>
+
+    </div>
+    
+    <script type="text/javascript" src="/javascripts/screen.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title1 %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="16x16">
+  </head>
+  <body>
+
+    <div id="container">
+
+      <header>
+
+        <div class="head-bar">
+
+          <a href="<%= '/' %>">
+            <div class="icon-tab">
+              <div class="icon"></div> 
+            </div>
+          </a>
+
+          <div class="head-menu">
+            <div class="menu">
+
+              <div class="dropbtn">
+                <div class="i"></div>
+                <div class="i"></div>
+                <div class="i"></div>
+              </div>
+
+              <div class="dropdown-content">
+                <nav>
+                  <ul>
+                    <li> <a href="<%= '/students/' %>">Students</a> </li>
+                    <li> <a href="<%= '/trainers/' %>">Trainers</a> </li>
+                    <li> <a href="<%= '/courses/' %>">Courses</a> </li>
+                    <li> <a href="<%= '/assignments/' %>">Assignments</a> </li>
+                    <li> <a href="<%= '/assignmentStudent/' %>">Student's Assignment</a> </li>
+                    <li> <a href="<%= '/students/addStudent/' %>">Add Student</a> </li>
+                    <li> <a href="<%= '/trainers/addTrainer' %>">Add Trainer</a> </li>
+                  </ul>
+                </nav>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </header>
+
+      <main>
+        <div class="main-items">
+
+          <div class="head-title">
+            <h2><%= title2 %></h2>
+            <p class="title"> Registration form to <%= title2 %></p>
+          </div>
+
+          <div class="add-panel">
+            
+            <section class="trainer-form">
+              <form id="trainer_form" name="" action="" method="post" onsubmit="return trainer_getInputValue()">
+                
+                <div class="a" name="a" value="1"></div>
+
+                <div class="info-panels">
+
+                  <div class="information">
+
+                    <h3 class="trainer-h3">Personal Information</h3>
+
+                    <section class="trainer-form-field">
+                        <label for="fname"><p>First Name</p></label>
+                        <input type="text" class="input" id="trainer_firstname" name="firstName" maxlength="20"  />
+                        <div class="error_text" id="trainer_firstname_error"></div>
+                    </section>  
+
+                    <section class="trainer-form-field">
+                        <label for="lname"><p>Last Name</p></label>
+                        <input type="text" class="input" id="trainer_lastname" name="lastName" maxlength="20" />
+                        <div class="error_text" id="trainer_lastname_error"></div>
+                    </section>
+                
+                    <section class="trainer-form-field">
+                        <label for="subject"><p>Subject</p></label>
+                        <select class="input-select" id="subject" name="subject" >
+                            <option value="" disabled selected></option>
+                            <option value="Javascript">Javascript</option>
+                            <option value="C#">C#</option>
+                            <option value="Java">Java</option>
+                        </select>
+                        <div class="error_text" id="subject_error"></div>
+                    </section>
+
+                  </div> 
+    
+                  <div class="information">
+
+                    <h3 class="trainer-h3">Organic Information</h3>
+
+                    <section class="trainer-form-field">
+                      <label for="hourweek"><p>Working Hour per Week</p></label>
+                      <input type="number" class="input" id="hour_week" name="hoursWeek"/>
+                      <div class="error_text" id="hour_week_error"></div>
+                    </section>
+
+                    <section class="trainer-form-field">
+                      <label for="hourlywages"><p>Hourly Wages</p></label>
+                      <input type="number" class="input" id="hourly_wages" name="hourlyWage"/>
+                      <div class="error_text" id="hourly_wages_error"></div>
+                    </section>
+
+                    <section class="trainer-form-field">
+                      <label for="contractlength"><p>Contract Length</p></label>
+
+                      <select class="input-select" id="contract_length" name="contractLength">
+                        <option value="" disabled selected></option>
+                        <option value="1">1 Year</option>
+                        <option value="2">2 Years</option>
+                        <option value="3">3 Years</option>
+                        <option value="4">4+ Years</option>
+                      </select>
+                      <div class="error_text" id="contract_length_error"></div>
+                    </section>
+                   
+                  </div>
+
+                  <div class="information">  
+
+                    <h3 class="trainer-h3">Additional Information</h3>
+
+                    <section class="trainer-form-field">
+                      <label for="phone"><p>Phone</p></label>
+                      <input type="tel" class="input" id="trainer_phone" name="phone"/>
+                      <div class="error_text" id="trainer_phone_error"></div>
+                    </section>
+
+                    <section class="trainer-form-field">
+                      <label for="email"><p>E-mail</p></label>
+                      <input type="text" class="input" id="e_mail" name="email" maxlength="30" />
+                      <div class="error_text" id="e_mail_error"></div>
+                    </section>
+
+                    <section class="trainer-form-field">
+                      <label for="address"><p>Address</p></label>
+                      <input type="text" class="input" id="trainer_address" name="address" maxlength="40"/>
+                      <div class="error_text" id="trainer_address_error"></div>
+                    </section>
+
+                  </div>
+
+                </div>
+
+                <section class="trainer-form-button">
+                  <section class="form_IsValidated" id="trainer_formIsValidated"></section>
+                  <input type="submit" name="" value="SUBMIT" />
+                </section>
+
+              </form>
+            </section>
+
+          </div>
+        
+          <div id="message"> <%= message %> </div>
+
+        </div>
+      </main>
+
+      <footer>
+
+      </footer>
+
+    </div>
+    
+    <script type="text/javascript" src="/javascripts/screen.js"></script>
+    <script type="text/javascript" src="/javascripts/trainerValidation.js"></script>
+
+  </body>
+</html>

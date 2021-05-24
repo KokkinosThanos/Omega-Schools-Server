@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="16x16">
+  </head>
+  <body>
+
+    <div id="container">
+
+      <header>
+
+        <div class="head-bar">
+
+          <a href="<%= '/' %>">
+            <div class="icon-tab">
+              <div class="icon"></div> 
+            </div>
+          </a>
+
+
+        </div>
+
+      </header>
+      
+      <main>
+
+
+
+        <div class="main-items">
+          <h1 class="h1">Ωmega Schools</h1>
+          <div class="home-panel">
+
+            <div class="home-menu">
+              <nav class="home-nav">
+                <ul>
+                  <li> <a href="<%= '/students/' %>">Students</a> </li>
+                  <li> <a href="<%= '/students/addStudent/' %>">Add Students</a> </li>
+                  <li> <a href="<%= '/assignmentStudent/' %>">Student's Assignment</a> </li>
+                  <li> <a href="<%= '/assignments/' %>">Assignments</a> </li>
+                </ul>
+              </nav>
+            </div>
+
+            
+            <div class="home-menu">
+              <nav class="home-nav">
+                <ul>
+                  <li> <a href="<%= '/trainers/' %>">Trainers</a> </li>
+                  <li> <a href="<%= '/trainers/addTrainer' %>">Add Trainers</a> </li>
+                  <li> <a href="<%= '/courses/' %>">Courses</a> </li>
+                  <li> <a href="<%= '/Statistics' %>">Statistics</a> </li>
+                </ul>
+              </nav>
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
+
+      <footer>
+
+      </footer>
+
+    </div>
+
+  <script type="text/javascript" src="/javascripts/screen.js"></script>
+
+  </body>
+</html>

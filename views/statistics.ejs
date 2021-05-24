@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title1 %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="16x16">
+  </head>
+
+  <body>
+
+    <div id="container">
+
+      <header>
+
+        <div class="head-bar">
+      
+          <a href="<%= '/' %>">
+            <div class="icon-tab">
+              <div class="icon"></div> 
+            </div>
+          </a>
+
+          <div class="head-menu">
+            <div class="menu">
+
+              <div class="dropbtn">
+                <div class="i"></div>
+                <div class="i"></div>
+                <div class="i"></div>
+              </div>
+
+              <div class="dropdown-content">
+                <nav>
+                  <ul>
+                    <li> <a href="<%= '/students/' %>">Students</a> </li>
+                    <li> <a href="<%= '/trainers/' %>">Trainers</a> </li>
+                    <li> <a href="<%= '/courses/' %>">Courses</a> </li>
+                    <li> <a href="<%= '/assignments/' %>">Assignments</a> </li>
+                    <li> <a href="<%= '/assignmentStudent/' %>">Student's Assignment</a> </li>
+                    <li> <a href="<%= '/students/addStudent/' %>">Add Student</a> </li>
+                    <li> <a href="<%= '/trainers/addTrainer' %>">Add Trainer</a> </li>
+                  </ul>
+                </nav>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </header>
+
+      <main>
+        <div class="main-items">
+
+          <div class="head-title">
+            <h2><%= title2 %></h2>
+            <p class="title"><%= title2 %> for year 2020-2021</p>
+          </div>
+
+          <div class="statistic_panel">
+
+          <div class="statistic">
+
+            <div class="half-statistic">
+
+                <div class="statistic-header">
+                    <h3 class="statistic-h3">Number of Students</h3>
+                </div>
+               
+                <div class="half-statistic-section">
+                  <div class="statistic-info">
+                    <p>In total <span class="bold-span-num"> <%= students[0].totalStudents %></span> Students </p>
+                  </div>
+                </div>
+
+            </div>
+
+            <div class="half-statistic">
+
+                <div class="statistic-header">
+                    <h3 class="statistic-h3">Number of Trainers</h3>
+                </div>
+                
+                <div class="half-statistic-section">
+                  <div class="statistic-info">
+                    <p>In total <span class="bold-span-num"><%= trainers[0].totalTrainers %> </span> Trainers </p>
+                  </div>
+                </div>
+
+            </div>
+
+          </div>
+
+            <div class="statistic">
+
+                <div class="statistic-header">
+                    <h3 class="statistic-h3">Students per Course</h3> 
+                </div>
+                
+                <div class="statistic-section">
+                  <% for(var i = 0; i < studentsCourse.length; i++) { %>
+                  <div class="statistic-info">
+                      <p> Course <span class="bold-span-text"> <%= studentsCourse[i].title %> </span>  </p> 
+                      <p> Students <span class="bold-span-num"><%= studentsCourse[i].studentsPerCourse %></span> </p>
+                  </div>
+                  <% } %>
+                </div>
+
+            </div>
+
+            <div class="statistic">
+
+                <div class="statistic-header">
+                    <h3 class="statistic-h3">Awarded Students</h3>
+                </div>
+
+                <div class="statistic-section">
+                  <% for(var i = 0; i < awardedStudents.length; i++) { %>
+                  <div class="statistic-info">
+                      <span class="bold-span-text"><%= awardedStudents[i].firstName %> <%= awardedStudents[i].lastName %> </span>
+                      <span class="bold-span-num"><%= awardedStudents[i].award %> </span> 
+                  </div>
+                  <% } %>
+                </div>
+                
+            </div>
+
+          </div>  
+
+      </main>
+
+      <footer>
+        <div class="test"></div>
+      </footer>
+
+    </div>
+
+  <script type="text/javascript" src="/javascripts/screen.js"></script>
+
+  </body>
+
+</html>
+
+
+
+
+

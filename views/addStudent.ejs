@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title1 %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" href="../images/favicon.png" type="image/png" sizes="16x16">
+  </head>
+  <body>
+
+    <div id="container">
+
+      <header>
+
+        <div class="head-bar">
+
+          <a href="<%= '/' %>">
+            <div class="icon-tab">
+              <div class="icon"></div> 
+            </div>
+          </a>
+
+          <div class="head-menu">
+            <div class="menu">
+
+              <div class="dropbtn">
+                <div class="i"></div>
+                <div class="i"></div>
+                <div class="i"></div>
+              </div>
+
+              <div class="dropdown-content">
+                <nav>
+                  <ul>
+                    <li> <a href="<%= '/students/' %>">Students</a> </li>
+                    <li> <a href="<%= '/trainers/' %>">Trainers</a> </li>
+                    <li> <a href="<%= '/courses/' %>">Courses</a> </li>
+                    <li> <a href="<%= '/assignments/' %>">Assignments</a> </li>
+                    <li> <a href="<%= '/assignmentStudent/' %>">Student's Assignment</a> </li>
+                    <li> <a href="<%= '/students/addStudent/' %>">Add Student</a> </li>
+                    <li> <a href="<%= '/trainers/addTrainer' %>">Add Trainer</a> </li>
+                  </ul>
+                </nav>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </header>
+
+      <main>
+        <div class="main-items">
+
+          <div class="head-title">
+            <h2><%= title2 %></h2>
+            <p class="title"> Registration form to <%= title2 %> </p>
+          </div>
+
+          <div class="add-panel">
+
+              <section class="student-form">
+                
+                <form id="student_form" name="" action="" method="post" onsubmit="return student_getInputValue()">
+                  
+                  <div class="student-info-panels">
+
+                    <div class="information">
+
+                        <h3 class="student-h3">Personal Information</h3>
+
+                        <section class="form-field">
+                            <label for="student_fname"><p>First Name</p></label>
+                            <input type="text" class="input" id="student_firstname" name="SfirstName" maxlength="25" required/>
+                            <div class="error_text" id="student_firstname_error"></div>
+                        </section>
+        
+                        <section class="form-field">
+                            <label for="student_lname"><p>Last Name</p></label>
+                            <input type="text" class="input" id="student_lastname" name="SlastName" maxlength="25" required/>
+                            <div class="error_text" id="student_lastname_error"></div>
+                        </section>
+
+                        <section class="double-item">
+    
+                          <section class="form-field-half">
+                              <label for="student_dob"><p>Date of Birth</p></label>
+                              <input type="date" class="input" id="student_dob" name="dateOfBirth" value="" min="1920-01-01" max="2002-01-01" required />
+                              <div class="error_text" id="student_dob_error"></div>
+                          </section>
+    
+                          <section class="form-field-half">
+                            <label for="tutionFees"><p>Tuition Fees</p></label>
+                            <input type="number" class="input" id="student_tutionFees" name="tuitionFees" required min="2500" max="2500"/>
+                            <div class="error_text" id="student_tutionFees_error"></div>
+                          </section>
+    
+                        </section>
+
+                    </div>
+
+                    <div class="information">
+
+                      <h3 class="student-h3">Organic Information</h3>
+
+                      <section class="form-field">
+                        <label for="studentCourseTitle"><p>Course Title</p></label>
+                        <select class="input-select" id="student_course_title" name="courseId" required>
+                          
+                          <option value="" disabled selected></option>
+                          <option value="1">Js-FT</option>
+                          <option value="2">Js-PT</option>
+                          <option value="3">Java-FT</option>
+                          <option value="4">Java-PT</option>
+                          <option value="5">C-FT</option>
+                          <option value="6">C-PT</option>
+
+                        </select>
+                        <div class="error_text" id="student_course_title_error"></div>
+                      </section>
+                      
+                      <section class="form-field">
+                        <label for="studentAssignmentTitle"><p>Assignment Title</p></label>
+                        <select class="input-select" id="student_assignment_title" name="assignmentId" required >
+
+                          <option value="" disabled selected></option>
+                          <option value="1">Design a School Structure (Js-FT)</option>
+                          <option value="2">Design a School Structure (Js-PT) </option>
+                          <option value="3">Design a Registration System (Java-FT)</option>
+                          <option value="4">Design a Registration System (Java-PT) </option>
+                          <option value="5">Design an Evaluation System (C-FT)</option>
+                          <option value="6">Design an Evaluation System (C-PT)</option>
+
+                        </select>
+                        <div class="error_text" id="student_assignment_title_error"></div>
+                      </section>
+
+                      <section class="double-item">
+    
+                        <section class="form-field-half">
+                            <label for="studentOralMark"><p>Oral Mark</p></label>
+                            <input type="number" class="input" id="student_oral_mark" name="oralMark" required min="0" max="20"/>
+                            <div class="error_text" id="student_oral_mark_error"></div>
+                        </section>
+        
+                        <section class="form-field-half">
+                            <label for="studentTotalMark"><p>Total Mark</p></label>
+                            <input type="number" class="input" id="student_total_mark" name="totalMark" required min="0" max="80"/>
+                            <div class="error_text" id="student_total_mark_error"></div>
+                        </section>
+
+                      </section>
+  
+                    </div>
+                    
+                  </div>
+
+                    <hr>
+    
+                    <section class="form-button">
+                        <section class="form_IsValidated" id="student_formIsValidated"></section>
+                        <input type="submit" name="submit" value="SUBMIT" />
+                    </section>
+    
+                </form>
+
+              </section>
+
+          </div>
+        
+          <div id="message"> <%= message %> </div>
+
+        </div>
+      </main>
+
+      <footer>
+
+      </footer>
+
+    </div>
+    
+    <script type="text/javascript" src="/javascripts/screen.js"></script>
+
+  </body>
+</html>
