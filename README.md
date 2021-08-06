@@ -1,20 +1,22 @@
-                    ~ ~~~~~~~~~~~~~~~~~~~~ ~
-                    ~ Omega Schools Server ~
-                    ~ ~~~~~~~~~~~~~~~~~~~~ ~
+# Omega Schools Server
 
+There is a process to a Mysql database  for write and read 
+data. There is a server-side and a client-side form 
+validation.  The  front-end  becomes  with  Ejs  and  for  the 
+style I'm using Css.
 
-The scenario is about "Ωmega schools" that has this online server application and 
-through it teachers or the princible can access remotly and submit important data 
-into the school database!
+----------------
+Web Technologies
 
-The one part of the application is the server-side, made with Express.js 
-and the other part is the database shema that is made with Mysql
+Client Side
+- Ejs
+- Css
+- Javascript
 
-For the protection of the database I apply form-validation with 'express-validator'
+Server Side
+- Express
+- Express Validator
 
-The pages resolves dynamicly in the client with EJS
+Database
+- Mysql
 
-There is also a front-validation, like this a mistake in the input will stop the 
-proccess on the client side and will not unjustly occupy the server.
-
-The front-end validation is made with vanilla Jacascript
